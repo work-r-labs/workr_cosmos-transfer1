@@ -1,0 +1,7 @@
+{
+    "prompt": "Several objects are being dropped from the point of view of the camera into a bin of objects. These objects are pieces of cut aluminium with scratches and markings on them. There are also random objects being dropped into the bin such as boxes. The box is being prepared for a bin picking task inside a factory. The box is sitting on a flat table in the factory with variable lighting and some yellow and black hazard tape on the table. Some of the aluminium cylinders are quite reflective and shine bright light straight back at the camera, appearing washed out.",
+    "input_video_path" : "workr_assets/isaac_videos/rgb_5.mp4",
+    "vis": {
+        "control_weight": 1.0
+    }
+}

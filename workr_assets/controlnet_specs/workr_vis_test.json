@@ -1,0 +1,7 @@
+{
+    "prompt": "Several objects are being dropped from the point of view of the camera into a bin of objects. These objects are pieces of cut aluminium with scratches and markings on them. There are also random objects being dropped into the bin such as boxes. The scene is brightly lit with a light directly over the box so there are a lot of reflections from the aluminium cylinders. The bin is sitting on a factory floor of concrete with various pieces of tape and scuffs and markings on the ground. ",
+    "input_video_path" : "workr_assets/isaac_videos/rgb_1.mp4",
+    "vis": {
+        "control_weight": 1.0
+    }
+}

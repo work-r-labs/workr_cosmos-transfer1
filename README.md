@@ -1,3 +1,53 @@
+## Workr Command
+
+
+CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python cosmos_transfer1/diffusion/inference/transfer.py \
+    --checkpoint_dir checkpoints \
+    --input_video_path workr_assets/isaac_videos/rgb_1.mp4 \
+    --video_save_name output_video_test \
+    --controlnet_specs workr_assets/controlnet_specs/workr_vis_test.json 
+
+
+
+CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python cosmos_transfer1/diffusion/inference/transfer.py \
+    --checkpoint_dir checkpoints \
+    --input_video_path workr_assets/isaac_videos/rgb_1.mp4 \
+    --video_save_name output_video_1 \
+    --controlnet_specs workr_assets/controlnet_specs/workr_vis_1.json 
+
+
+CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python cosmos_transfer1/diffusion/inference/transfer.py \
+    --checkpoint_dir checkpoints \
+    --input_video_path workr_assets/isaac_videos/rgb_2.mp4 \
+    --video_save_name output_video_2 \
+    --controlnet_specs workr_assets/controlnet_specs/workr_vis_2.json 
+
+CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python cosmos_transfer1/diffusion/inference/transfer.py \
+    --checkpoint_dir checkpoints \
+    --input_video_path workr_assets/isaac_videos/rgb_5.mp4 \
+    --video_save_name output_video_5 \
+    --controlnet_specs workr_assets/controlnet_specs/workr_vis_5.json 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p align="center">
     <img src="assets/nvidia-cosmos-header.png" alt="NVIDIA Cosmos Header">
 </p>
