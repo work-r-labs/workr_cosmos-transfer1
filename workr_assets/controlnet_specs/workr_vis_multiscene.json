@@ -1,0 +1,7 @@
+{
+    "prompt": "Images of bins containing various objects. Some of the objects are cylinders of cut aluminium, ready to be used in a factory process. These have cut marks on the end, scrapes and scratches on the sides from being roughly handled and dropped into the bin. The bin these are in is for a bin picking task in a factory and looks worn and scuffed as well, because many objects have been dropped into it. The box is sitting on a flat surface on the floor of a factory with variable lighting and some yellow and black hazard tape on the floor around it. Some of the aluminium cylinders are quite reflective and shine bright light straight back at the camera, appearing washed out.",
+    "input_video_path" : "workr_assets/isaac_videos/rgb_multiscene.mp4",
+    "vis": {
+        "control_weight": 1.0
+    }
+}

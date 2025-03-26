@@ -29,8 +29,15 @@ CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python cosmos_transfer1/diffusion/infe
     --controlnet_specs workr_assets/controlnet_specs/workr_vis_5.json 
 
 
+CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python cosmos_transfer1/diffusion/inference/transfer.py     --checkpoint_dir checkpoints     --input_video_path workr_assets/isaac_videos/rgb_1.mp4     --video_save_name output_video_seg_1     --controlnet_specs workr_assets/controlnet_specs/workr_seg_1.json
 
 
+
+CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python cosmos_transfer1/diffusion/inference/transfer.py \
+    --checkpoint_dir checkpoints \
+    --input_video_path workr_assets/isaac_videos/rgb_multiscene.mp4 \
+    --video_save_name output_video_multiscene \
+    --controlnet_specs workr_assets/controlnet_specs/workr_vis_multiscene.json 
 
 
 
