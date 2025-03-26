@@ -32,7 +32,6 @@ CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python cosmos_transfer1/diffusion/infe
 CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python cosmos_transfer1/diffusion/inference/transfer.py     --checkpoint_dir checkpoints     --input_video_path workr_assets/isaac_videos/rgb_1.mp4     --video_save_name output_video_seg_1     --controlnet_specs workr_assets/controlnet_specs/workr_seg_1.json
 
 
-
 CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python cosmos_transfer1/diffusion/inference/transfer.py \
     --checkpoint_dir checkpoints \
     --input_video_path workr_assets/isaac_videos/rgb_multiscene.mp4 \
@@ -40,9 +39,26 @@ CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python cosmos_transfer1/diffusion/infe
     --controlnet_specs workr_assets/controlnet_specs/workr_vis_multiscene.json 
 
 
+jq '.input_video_path="ignore/scene_0_rgb.mp4" | .seg.input_control="ignore/scene_0_instance_segmentation.mp4"' /home/ubuntu/jasper-cosmos-transfer-1/cosmos-transfer1/workr_assets/controlnet_specs/workr_scene_template.json > /home/ubuntu/jasper-cosmos-transfer-1/cosmos-transfer1/workr_assets/controlnet_specs/workr_scene_output.json
+CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python cosmos_transfer1/diffusion/inference/transfer.py \
+    --checkpoint_dir checkpoints \
+    --input_video_path ignore/scene_0_rgb.mp4 \
+    --video_save_name scene_0_cosmos.mp4 \
+    --controlnet_specs workr_assets/controlnet_specs/workr_scene_output.json 
 
 
+# To Run On N Scene Videos
+for i in {0..19}; do
+    # Adjust the JSON file
+    jq ".input_video_path=\"ignore/scene_${i}_rgb.mp4\" | .seg.input_control=\"ignore/scene_${i}_instance_segmentation.mp4\"" /home/ubuntu/jasper-cosmos-transfer-1/cosmos-transfer1/workr_assets/controlnet_specs/workr_scene_template.json > /home/ubuntu/jasper-cosmos-transfer-1/cosmos-transfer1/workr_assets/controlnet_specs/workr_scene_output.json
 
+    # Run the Python script
+    CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python cosmos_transfer1/diffusion/inference/transfer.py \
+        --checkpoint_dir checkpoints \
+        --input_video_path "ignore/scene_${i}_rgb.mp4" \
+        --video_save_name "scene_${i}_cosmos.mp4" \
+        --controlnet_specs workr_assets/controlnet_specs/workr_scene_output.json
+done
 
 
 
