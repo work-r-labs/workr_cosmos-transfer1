@@ -1,0 +1,7 @@
+{
+    "prompt": "Several items are in a bin and are being thrown vertically up towards the camera. These objects are pieces of aluminium round stock cut on a band saw, some are made of cast aluminium and some are rolled aluminium. They have a range of surface finishes from shiny to dull. All of them have scratches and marks from the cutting, and from being roughly handled. These are above a bin used for industrial bin picking which also looks worn and scuffed. Behind this bin is a factory floor made of concrete, with bits of yellow and black hazard tape stuck to the floor in places, as well as scuffs and markings.",
+    "input_video_path" : "dummy/path.mp4",
+    "vis": {
+        "control_weight": 1.0
+    }
+}

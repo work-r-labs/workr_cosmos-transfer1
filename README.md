@@ -61,10 +61,37 @@ for i in {0..19}; do
 done
 
 
+for i in {0..19}; do
+    # Adjust the JSON file
+    jq ".input_video_path=\"ignore/scene_${i}_rgb.mp4\"" /home/ubuntu/jasper-cosmos-transfer-1/cosmos-transfer1/workr_assets/controlnet_specs/workr_scene_vis_template.json > /home/ubuntu/jasper-cosmos-transfer-1/cosmos-transfer1/workr_assets/controlnet_specs/workr_scene_vis_output.json
+
+    # Run the Python script
+    CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python cosmos_transfer1/diffusion/inference/transfer.py \
+        --checkpoint_dir checkpoints \
+        --input_video_path "ignore/scene_${i}_rgb.mp4" \
+        --video_save_name "scene_${i}_vis_cosmos.mp4" \
+        --controlnet_specs workr_assets/controlnet_specs/workr_scene_vis_output.json
+done
 
 
+### RGB and semantic conditioning
+CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python cosmos_transfer1/diffusion/inference/transfer.py \
+    --checkpoint_dir checkpoints \
+    --input_video_path ignore/scene_0_rgb.mp4 \
+    --video_save_name output_rgb_and_vis_scene_0 \
+    --controlnet_specs workr_assets/controlnet_specs/workr_rgb_and_vis_scene_0.json 
 
+CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python cosmos_transfer1/diffusion/inference/transfer.py \
+    --checkpoint_dir checkpoints \
+    --input_video_path ignore/scene_1_rgb.mp4 \
+    --video_save_name output_rgb_and_vis_scene_1 \
+    --controlnet_specs workr_assets/controlnet_specs/workr_rgb_and_vis_scene_1.json 
 
+CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python cosmos_transfer1/diffusion/inference/transfer.py \
+    --checkpoint_dir checkpoints \
+    --input_video_path ignore/scene_2_rgb.mp4 \
+    --video_save_name output_rgb_and_vis_scene_2 \
+    --controlnet_specs workr_assets/controlnet_specs/workr_rgb_and_vis_scene_2.json 
 
 
 
